@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import style from './Register.module.css';
 import axios from 'axios';
-import video3 from '/public/RegisterBg.mp4';
+import video3 from '../../assets/RegisterBg.mp4';
 import Login from './Login';
 
 const translations = {
@@ -35,6 +37,7 @@ const translations = {
 };
 
 const Signup = () => {
+    const navigate = useNavigate();
     const [isSignUp, setIsSignUp] = useState(true);
     const [language, setLanguage] = useState('en');
     const [formData, setFormData] = useState({
@@ -77,6 +80,15 @@ const Signup = () => {
     };
 
     const t = translations[language];
+
+    return (
+        <div className={style.signup}>
+            <video
+                autoPlay
+                loop
+                muted
+                className={style.backgroundVideo}
+            >
 
     // Inline CSS styles
     const styles = {
@@ -187,9 +199,52 @@ const Signup = () => {
         <div className="signup">
             {/* Video Background */}
             <video autoPlay loop muted style={styles.backgroundVideo}>
+
                 <source src={video3} type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
+
+
+            <div className={style.content}>
+                <div className={style.sign}>
+                    <div className={style.languageSelector}>
+                        <button onClick={() => changeLanguage('en')}>English</button>
+                        <button onClick={() => changeLanguage('hi')}>हिन्दी</button>
+                    </div>
+
+                    {isSignUp ? (
+                        <form className={style.formContainer} onSubmit={handleSubmit}>
+                            <h2>{t.signUp}</h2>
+                            <div className={style.inputField}>
+                                <label htmlFor="name">{t.name}</label>
+                                <input type="text" id="name" placeholder={t.name} onChange={handleChange} required />
+                            </div>
+
+                            <div className={style.inputField}>
+                                <label htmlFor="phone">{t.phone}</label>
+                                <input type="text" id="phone" placeholder={t.phone} onChange={handleChange} required />
+                            </div>
+
+                            <div className={style.inputField}>
+                                <label htmlFor="password">{t.password}</label>
+                                <input type="password" id="password" placeholder={t.password} onChange={handleChange} required />
+                            </div>
+
+                            <div className={style.inputField}>
+                                <label htmlFor="state">{t.state}</label>
+                                <input type="text" id="state" placeholder={t.state} onChange={handleChange} required />
+                            </div>
+
+                            <div className={style.inputField}>
+                                <label htmlFor="district">{t.district}</label>
+                                <input type="text" id="district" placeholder={t.district} onChange={handleChange} required />
+                            </div>
+
+                            <button type="submit" className={style.btn}>{t.submitSignUp}</button>
+
+                            <p className={style.toggleText}>
+                                {t.alreadyHaveAccount}
+                                <button type="button" className={style.toggleBtn} onClick={redirectToLogin}>{t.login}</button>
 
             {/* Overlay Content */}
             <div className="content" style={styles.content}>
@@ -297,10 +352,10 @@ const Signup = () => {
                                 >
                                     {t.login}
                                 </button>
+
                             </p>
                         </form>
                     ) : (
-                        // Use the Login component
                         <Login t={t} toggleForm={toggleForm} />
                     )}
                 </div>

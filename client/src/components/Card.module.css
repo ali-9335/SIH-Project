@@ -1,0 +1,29 @@
+
+.cardDiv{
+    width:33.3%;
+    background-color: white;
+    border-radius:10px;
+    box-shadow:10px 10px 5px rgb(171, 235, 171);
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+}
+.cardDiv h1{
+    font-size: 2rem;
+    
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.cardButton{
+    display: flex;
+    gap:15px;
+    flex-wrap: wrap;
+}
+
+.Img{
+    width: 100%;
+    height: 50%;
+}
+.Img img{
+    width:100%;
+    object-fit: cover;
+}

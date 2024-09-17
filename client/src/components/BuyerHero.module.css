@@ -1,0 +1,121 @@
+.main {
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(328px at 2.9% 15%, rgb(191, 224, 251) 0%, rgb(232, 233, 251) 25.8%, rgb(252, 239, 250) 50.8%, rgb(234, 251, 251) 77.6%, rgb(240, 251, 244) 100.7%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    background: none;
+    width: 100vw;
+    font-weight: bolder;
+    height: 10vh;
+    border-bottom: 0.5px solid grey;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding-left: 0;
+}
+
+.nav button {
+    width: 100px;
+}
+
+/* Hide the navigation links initially for small screens */
+.navLinks {
+    display: flex;
+    gap: 20px;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Show the hamburger menu for small screens */
+@media screen and (max-width: 768px) {
+    .nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+    }
+
+    /* Display the hamburger button */
+    .hamburger {
+        display: block;
+    }
+
+    /* Show nav links when menu is opened */
+    .navLinks.show {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: white;
+        width: 100%;
+        padding: 10px;
+        border-top: 1px solid grey;
+    }
+}
+
+/* Hero Section */
+.hero {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heroText {
+    font-weight: 200;
+    width: 50%;
+    height: 90vh;
+    overflow: scroll;
+    padding: 100px;
+}
+
+.heroText h1 {
+    font-size: 3rem;
+    margin-bottom: 50px;
+}
+
+.heroImage {
+    width: 50%;
+    height: 90vh;
+    padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+    }
+
+    .heroText {
+        width: 100%;
+        padding: 20px;
+        height: auto;
+    }
+
+    .heroImage {
+        width: 100%;
+        padding: 10px;
+        height: auto;
+    }
+}
