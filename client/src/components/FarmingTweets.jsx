@@ -1,6 +1,7 @@
-// FarmingUpdates.js
+
 import React from 'react';
 import { Container, Card, ListGroup, Image } from 'react-bootstrap';
+import './FarmingTweets.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const tweetsAndBlogs = [
@@ -23,7 +24,7 @@ const tweetsAndBlogs = [
 export default function FarmingUpdates() {
   return (
     <Container id="farming-updates" fluid className="my-5" style={{ height: '100vh', overflowY: 'auto' }}>
-      <h2 className="text-center">Latest Farming Methods</h2>
+      <h2 className="text-center custom-h2">Latest Farming Methods</h2>
       <div style={{ maxHeight: '100%', overflowY: 'scroll', paddingTop: '10px' }}>
         <ListGroup variant="flush">
           {tweetsAndBlogs.map((item, index) => (

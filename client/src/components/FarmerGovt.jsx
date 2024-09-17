@@ -1,51 +1,151 @@
-// GovtSchemes.js
 import React from 'react';
-import { Container, Card, Row, Col, Button } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import img1 from '../assets/pexels-erikscheel-95425.jpg';
+import img2 from '../assets/pexels-kelly-1179532-2382904.jpg';
+import img3 from '../assets/pexels-pixabay-50707.jpg';
+import img4 from '../assets/img4.jpg';
+import img5 from '../assets/img5.jpg';
+import img6 from '../assets/img6.jpg';
+import './FarmerGovt.css'; // Assuming you have a separate CSS file for styling
 
-// Dummy data for government schemes
-const schemes = [
-  { 
-    title: 'Scheme 1', 
-    description: 'Description of Scheme 1',
-    imageUrl: 'data:image/jpeg;base64,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', // Replace with actual image URLs
-    link: '#scheme1'
-  },
-  { 
-    title: 'Scheme 2', 
-    description: 'Description of Scheme 2',
-    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRosdAb7gUyOxi4srmAbKTpw2IS-3MuZVz4Fg&s', // Replace with actual image URLs
-    link: '#scheme2'
-  },
-  { 
-    title: 'Scheme 3', 
-    description: 'Description of Scheme 3',
-    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkEp-UgH4F5bNFjskS5gavq46uCaP2qT5Lwg&s', // Replace with actual image URLs
-    link: '#scheme3'
-  }
-];
+const FarmerGovt = () => {
+  const currentYear = new Date().getFullYear();
 
-export default function GovtSchemes() {
   return (
-    <Container id="govt-schemes" className="my-5">
-      <h2 className="text-center mb-4">Government Schemes</h2>
-      <Row>
-        {schemes.map((scheme, index) => (
-          <Col md={4} key={index} className="mb-4">
-            <Card>
-              <Card.Img variant="top" src={scheme.imageUrl} style={{ height: '150px', objectFit: 'cover' }} />
-              <Card.Body>
-                <Card.Title>{scheme.title}</Card.Title>
-                <Card.Text style={{ height: '100px', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                  {scheme.description}
-                </Card.Text>
-                <Button variant="primary" href={scheme.link}>Apply Now</Button>
-                <Button variant="link" href={scheme.link} className="mt-2">Read Full Scheme & Terms</Button>
-              </Card.Body>
-            </Card>
-          </Col>
-        ))}
-      </Row>
-    </Container>
+    <div className="container-fluid" style={{ padding: "140px 0" }}>
+      <div className="heading">
+        <h2 style={{ margin: "0 0 20px", fontSize: "70px", color: "#333333", textAlign: "center", fontWeight: "900", padding: "50px 0" }}>
+          GOVERNMENT <span style={{ color: "#bb8b08" }}>SCHEMES</span>
+        </h2>
+      </div>
+      <div className="row" style={{ margin: "0 60px" }}>
+        {/* Scheme 1 */}
+        <div className="col-md-6 col-lg-4 mt-5">
+          <div className="blog-grid">
+            <div className="blog-grid-img position-relative">
+              <img alt="Pradhan Mantri Fasal Bima Yojana" src={img1} />
+            </div>
+            <div className="blog-grid-text p-4">
+              <h3 className="h5 mb-3">
+                <a href="#!">Pradhan Mantri Fasal Bima Yojana</a>
+                <span className="scheme-date">01 Jan, {currentYear}</span>
+              </h3>
+              <p className="description-text">
+                A crop insurance scheme providing financial support to farmers suffering crop loss due to natural calamities, pests, and diseases.
+              </p>
+              <div className="button-container">
+                <button style={{margin:"30px 0"}} className="custom-button" onClick={() => window.location.href = "#read-more-1"}>Read More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Scheme 2 */}
+        <div className="col-md-6 col-lg-4 mt-5">
+          <div className="blog-grid">
+            <div className="blog-grid-img position-relative">
+              <img alt="Soil Health Management Scheme" src={img2} />
+            </div>
+            <div className="blog-grid-text p-4">
+              <h3 className="h5 mb-3">
+                <a href="#!">Soil Health Management Scheme</a>
+                <span className="scheme-date">15 Mar, {currentYear}</span>
+              </h3>
+              <p className="description-text">
+                This scheme focuses on improving soil fertility and health through the use of organic inputs and sustainable practices.
+              </p>
+              <div className="button-container">
+                <button style={{margin:"30px 0"}} className="custom-button" onClick={() => window.location.href = "#read-more-2"}>Read More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Scheme 3 */}
+        <div className="col-md-6 col-lg-4 mt-5">
+          <div className="blog-grid">
+            <div className="blog-grid-img position-relative">
+              <img alt="National Agriculture Market (eNAM)" src={img3} />
+            </div>
+            <div className="blog-grid-text p-4">
+              <h3 className="h5 mb-3">
+                <a href="#!">National Agriculture Market</a>
+                <span className="scheme-date">20 Apr, {currentYear}</span>
+              </h3>
+              <p className="description-text">
+                An online trading platform aimed at creating a unified national market for agricultural commodities and help farmers and buyers to buy crops
+              </p>
+              <div className="button-container">
+                <button style={{margin:"30px 0"}} className="custom-button" onClick={() => window.location.href = "#read-more-3"}>Read More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Scheme 4 */}
+        <div className="col-md-6 col-lg-4 mt-5">
+          <div className="blog-grid">
+            <div className="blog-grid-img position-relative">
+              <img alt="Kisan Credit Card Scheme" src={img4} />
+            </div>
+            <div className="blog-grid-text p-4">
+              <h3 className="h5 mb-3">
+                <a href="#!">Kisan Credit Card Scheme</a>
+                <span className="scheme-date">30 May, {currentYear}</span>
+              </h3>
+              <p className="description-text">
+                Provides farmers with timely access to credit for agricultural activities, including purchasing inputs and crop insurance.
+              </p>
+              <div className="button-container">
+                <button style={{margin:"30px 0"}} className="custom-button" onClick={() => window.location.href = "#read-more-4"}>Read More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Scheme 5 */}
+        <div className="col-md-6 col-lg-4 mt-5">
+          <div className="blog-grid">
+            <div className="blog-grid-img position-relative">
+              <img alt="Rural Infrastructure Development Fund (RIDF)" src={img5} />
+            </div>
+            <div className="blog-grid-text p-4">
+              <h3 className="h5 mb-3">
+                <a href="#!">Rural Infrastructure Development Fund</a>
+                <span className="scheme-date">05 Jun, {currentYear}</span>
+              </h3>
+              <p className="description-text">
+                Supports infrastructure development in rural areas, including irrigation, roads, and rural markets and also help them to grow there business.
+              </p>
+              <div className="button-container">
+                <button style={{margin:"30px 0"}} className="custom-button" onClick={() => window.location.href = "#read-more-5"}>Read More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Scheme 6 */}
+        <div className="col-md-6 col-lg-4 mt-5">
+          <div className="blog-grid">
+            <div className="blog-grid-img position-relative">
+              <img alt="Mission for Integrated Development of Horticulture (MIDH)" src={img6} />
+            </div>
+            <div className="blog-grid-text p-4">
+              <h3 className="h5 mb-3">
+                <a href="#!">Mission for Development Horticulture</a>
+                <span className="scheme-date">15 Jul, {currentYear}</span>
+              </h3>
+              <p className="description-text">
+                Aims to promote holistic growth and development of the horticulture sector in India by Integrated Development of Horticulture.
+              </p>
+              <div className="button-container">
+                <button style={{margin:"30px 0"}} className="custom-button" onClick={() => window.location.href = "#read-more-6"}>Read More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
-}
+};
+
+export default FarmerGovt;

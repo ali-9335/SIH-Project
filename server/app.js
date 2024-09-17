@@ -9,14 +9,14 @@ app.use(cors());
 app.use(express.json()); // To parse JSON request bodies
 
 // MongoDB connection string
-const MONGO_URI = 'mongodb://localhost:27017/farmer-buyer-db'; // Replace with your MongoDB URI
+const MONGO_URI = 'mongodb://localhost:27017/farmerData'; // Replace with your MongoDB URI
 
 mongoose.connect(MONGO_URI)
     .then(() => console.log('MongoDB connected'))
     .catch((error) => console.log('MongoDB connection error:', error));
 
 app.use('/auth', require('./routes/auth'));
-// app.use('/farmers', require('./routes/farmers'));
+app.use('/api/farmerData', require('./api/farmerData'));
 // app.use('/buyers', require('./routes/buyers'));
 // app.use('/contracts', require('./routes/contracts'));
 

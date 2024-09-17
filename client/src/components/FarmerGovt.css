@@ -1,0 +1,81 @@
+.container-fluid {
+    padding: 4rem;
+  }
+  
+  .blog-grid {
+    position: relative;
+    box-shadow: 0 1rem 1.75rem 0 rgba(45, 55, 75, 0.1);
+    border: 0.0625rem solid rgba(220, 224, 229, 0.6);
+    border-radius: 0.25rem;
+    transition: all .2s ease-in-out;
+  }
+  
+  .blog-grid-img img {
+    width: 100%;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+  }
+  
+  .blog-grid-text {
+    position: relative;
+  }
+  .blog-grid-text h3{
+    font-size: 30px;
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+  }
+  .blog-grid-text a{
+    font-size: 27px;
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+  }
+  .blog-grid-text p{
+    color: #808080;
+    line-height: 1.2;
+    font-size: 20px;
+    text-align: justify;
+  }
+  .blog-grid-text span{
+    display: block;
+    padding-top: 20px;
+    font-size: 24px;
+    font-weight: 500;
+  }
+  .blog-grid{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  }
+  .description-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .custom-button {
+    background-color: #bb8b08; /* Button color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Padding */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+    padding: 15px 45px;
+    border-radius: 0;
+    font-size: medium;
+  }
+  
+  .custom-button:hover {
+    background-color: #a87a07; /* Darker shade on hover */
+  }
+  
+ 

@@ -4,6 +4,7 @@ import GovtSchemes from "./components/FarmerGovt"
 import CompanyAnnouncements from "./components/FarmerCompany"
 import FarmingUpdates from "./components/FarmingTweets"
 import MarketTrends from "./components/MarketTrend"
+import FarmerFooter from "./components/FarmerFooter"
 export default function FDashboard(){
     return<>
         <NavbarComponent/>
@@ -12,5 +13,6 @@ export default function FDashboard(){
         <CompanyAnnouncements/>
         <MarketTrends/>
         <FarmingUpdates/>
+        <FarmerFooter/>
     </>
 }

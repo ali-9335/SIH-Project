@@ -27,27 +27,9 @@ export default function App() {
 
         <Route path="/buyer-dashboard" element={<BDashboard/>}/>
         <Route path="/buyer-dashboard/crop-form" element={<SearchCrop/>} />
-
-//         <Route path="/buyer-dashboard" element={ 
-//           <>
-//             <FarmerListing/>
-//           </>
-//         } />
+        <Route path='/farmer-listing' element={<FarmerListing/>}/>
 
       </Routes>
     </Router>
-  //  <div>
-  //     <h2>Crop Bid Card Test</h2>
-  //     {/* Render the CropBidCard with dummy data */}
-  //     <CropBidCard
-  //       farmerName={dummyData.farmerName}
-  //       farmerLocation={dummyData.farmerLocation}
-  //       cropQuality={dummyData.cropQuality}
-  //       cropQuantity={dummyData.cropQuantity}
-  //       cropBasePrice={dummyData.cropBasePrice}
-  //       cropImages={dummyData.cropImages}
-  //     />
-  //   </div>
- 
   );
 }

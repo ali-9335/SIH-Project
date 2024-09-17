@@ -1,0 +1,10 @@
+/* MarketTrends.css */
+.market-trends {
+    background-color: #f8f9fa;
+  }
+  
+  .chart-container {
+    height: 400px;
+    max-width: 100%;
+  }
+  

@@ -4,6 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { Line, Bar, Pie } from 'react-chartjs-2';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'chart.js/auto';
+import './MarketTrends.css'; // Ensure you have this CSS file for custom styles
 
 export default function MarketTrends() {
   // Dummy data for crops market trends
@@ -67,39 +68,26 @@ export default function MarketTrends() {
   };
 
   return (
-    <Container fluid style={{ height: '100vh', overflowY: 'auto' }} className="bg-light py-4">
+    <Container-fluid className="market-trends py-5">
       <h2 className="text-center mb-4">Current Market Price & Trends of Crops</h2>
-      <div style={{ overflowX: 'scroll', paddingBottom: '20px' }}>
-        <Row>
-          {/* Line Chart - Price Trends */}
-          <Col md={6}>
-            <h4 className="text-center">Price Trends Over Time</h4>
-            <div style={{ height: '400px', maxWidth: '100%' }}>
-              <Line data={lineData} />
-            </div>
-          </Col>
+      <Row className="mb-4">
+        {/* Line Chart - Price Trends */}
+        <Col md={6} className="mb-4">
+          <h4 className="text-center mb-3">Price Trends Over Time</h4>
+          <div className="chart-container">
+            <Line data={lineData} />
+          </div>
+        </Col>
 
-          {/* Bar Chart - Current Price */}
-          <Col md={6}>
-            <h4 className="text-center">Current Price Comparison</h4>
-            <div style={{ height: '400px', maxWidth: '100%' }}>
-              <Bar data={barData} />
-            </div>
-          </Col>
-        </Row>
-      </div>
+        {/* Bar Chart - Current Price */}
+        <Col md={6} className="mb-4">
+          <h4 className="text-center mb-3">Current Price Comparison</h4>
+          <div className="chart-container">
+            <Bar data={barData} />
+          </div>
+        </Col>
+      </Row>
 
-      <div style={{ overflowX: 'scroll', paddingTop: '20px' }}>
-        <Row>
-          {/* Pie Chart - Market Share */}
-          <Col md={{ span: 6, offset: 3 }}>
-            <h4 className="text-center">Market Share of Different Crops</h4>
-            <div style={{ height: '400px', maxWidth: '100%' }}>
-              <Pie data={pieData} />
-            </div>
-          </Col>
-        </Row>
-      </div>
-    </Container>
+    </Container-fluid>
   );
 }

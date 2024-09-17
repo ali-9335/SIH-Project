@@ -1,0 +1,33 @@
+/* Date styling */
+.announcement-date {
+    display: block;
+    font-size: 14px;
+    color: #888;
+    margin-top: 5px;
+  }
+  
+  /* Description styling */
+  .description-text {
+    margin-bottom: 20px;
+  }
+  
+  /* Button container styling */
+  .button-container {
+    text-align: center;
+  }
+  
+  /* Custom button styling */
+  .custom-button {
+    background-color: #bb8b08; /* Button color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Padding */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+  }
+  
+  .custom-button:hover {
+    background-color: #a87a07; /* Darker shade on hover */
+  }

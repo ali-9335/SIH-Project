@@ -1,0 +1,60 @@
+/* FarmerFooter.css */
+
+.footer {
+    background-color: #343a40; /* Dark background color */
+  }
+  
+  .footer-top {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+  
+  .footer-link-01 li+li {
+    padding-top: 0.8rem;
+  }
+  
+  .footer-title-01 {
+    font-size: 20px;
+    margin: 0 0 20px;
+    font-weight: 600;
+  }
+  
+  .footer-link-01 a {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.75);
+  }
+  
+  .footer-link-01 a:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: auto;
+    right: 0;
+    width: 0;
+    height: 1px;
+    transition: ease all .35s;
+    background: currentColor;
+  }
+  
+  .footer-link-01 a:hover:after {
+    left: 0;
+    right: auto;
+    width: 100%;
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem 0;
+  }
+  
+  .text-opacity-75 {
+    opacity: 0.75;
+  }
+  
+  .fs-sm {
+    font-size: 0.875rem;
+  }
+  
