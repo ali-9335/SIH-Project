@@ -157,7 +157,7 @@ export default function FarmerListing() {
                                     <p className="card-text"><strong>Harvest Date:</strong> {formatDate(farmer.harvestDate)}</p>
                                     <p className="card-text"><strong>Quantity in KG:</strong> {farmer.quantityInKG}</p>
                                     <p className="card-text"><strong>Current Bid:</strong> {farmer.currentBid ? farmer.currentBid : 'No bids'}</p>
-                                    <p className="card-text"><strong>Bid End Time:</strong> {formatDate(farmer.bidEndTime)}</p>
+                                    <p className="card-text"><strong>Bid End Time:</strong> {formatDate(farmer.bidEndTIme)}</p>
                                     <div className="input-group mt-3">
                                         <input 
                                             type="number" 

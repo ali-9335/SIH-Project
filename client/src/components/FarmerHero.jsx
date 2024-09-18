@@ -7,6 +7,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // Default image URL for demonstration
 const defaultHeroImage = 'https://img.freepik.com/free-photo/young-wheat-green-field_1268-29146.jpg';
 
+function redirectToAddCrop() {
+  window.location.href = '/farmer-dashboard/addCrop';
+}
+
 export default function HeroSection() {
   return (
     <div
@@ -21,9 +25,6 @@ export default function HeroSection() {
         display:"flex",
         flexDirection:"row",
         alignItems:"center"
-
-
-        
       }}
     >
       <Container-fluid style={{margin:"0 auto"}}>
@@ -34,7 +35,7 @@ export default function HeroSection() {
             Discover the latest in agricultural technology, connect with buyers and sellers, and stay informed with the latest news and updates.
           </p>
           </div>
-          <Button variant="primary" href="#register-crop"  style={{padding:"35px 80px",fontSize:"24px" , color:"white" , backgroundColor:"#282828" , border:"0" , marginTop:"50px",textTransform:"40px"}}> Register Your Crop</Button>
+          <Button variant="primary" href="#register-crop"  style={{padding:"35px 80px",fontSize:"24px" , color:"white" , backgroundColor:"#282828" , border:"0" , marginTop:"50px",textTransform:"40px"}} onClick={redirectToAddCrop}> Register Your Crop</Button>
          
       </Container-fluid>
     </div>
